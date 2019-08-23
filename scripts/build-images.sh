@@ -83,9 +83,7 @@ build_image template-processors/applier/ eunomia-applier
 
 # building and pushing Applier template processor image
 # NOTE: this is based on the OCP template image, so this build must always come after that.
-docker build template-processors/applier -t ${REPOSITORY}/eunomia-applier:${IMAGE_TAG}
-docker push ${REPOSITORY}/eunomia-applier:${IMAGE_TAG}
+build_image template-processors/applier ${REPOSITORY}/eunomia-applier:${IMAGE_TAG} ${PUSH_IMAGES}
 
 # building and pushing jinja template processor images
 build_image template-processors/jinja/ eunomia-jinja
-
